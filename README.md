@@ -4,7 +4,7 @@
  Everything about PySpark
 
 
-![py](/imag/ima1.png)
+![py](/imag/ima1.jpeg)
 
 ---------------------------------------------
 **Repository summary**
