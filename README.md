@@ -312,6 +312,7 @@ conf = SparkConf().setAppName("MyApp").setMaster("local")
 # Initialize SparkContext with the configuration
 sc = SparkContext(conf=conf)
 
+` ``` `
 
 ## Create an SparkSession
 
