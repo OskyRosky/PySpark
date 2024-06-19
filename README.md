@@ -46,8 +46,6 @@
 
 ## Python + Spark = PySpark
 
-## PySpark functionality
-
 # II. Spark Installation on Mac and Windos
 
 ## Mac
@@ -84,7 +82,7 @@
 
 ## SQL Operations
 
-# IX. 
+# IX. Other Uses and Applications of PySpark
 
-# X.
+# X. 
 
