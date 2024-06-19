@@ -84,5 +84,14 @@
 
 # IX. Other Uses and Applications of PySpark
 
-# X. 
+# X.  PySpark Applications 
 
+### 1. 
+
+### 2.
+
+### 3.
+
+# XI. Other PySpark Resources
+
+Staying updated with the latest developments in PySpark is crucial for anyone involved in Data field. Here is a list of some exclusive websites and resources dedicated to PySpark that can help you keep abreast of the latest trends, research, and tools.
