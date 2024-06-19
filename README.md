@@ -30,23 +30,61 @@
 
 # :computer: Py Spark :computer:
  
-# 1. What's Py Spark ?
+# I. Introduction to PySpart
 
-# 2.
+## Apache 
 
-# 3.
+## Apache Spark
 
-# 4.
+## Spark for Big Data
 
-# 5.
+## Map Reduce
 
-# 6.
+## The Cluster
 
-# 7.
+## Distributet Sistema
 
-# 8.
+## Python + Spark = PySpark
 
-# 9.
+## PySpark functionality
 
-# 10.
+# II. Spark Installation on Mac and Windos
+
+## Mac
+
+## Windows
+
+# III. Spark Context and Spark Session
+
+## What's SparkContex
+
+## What's SparkSession
+
+## Similarities
+
+## Differences 
+
+## Create an SparkContex
+
+## Create an SparkSession
+
+# IV. Spark RDD and RDD
+
+# V. Spark DataFrane 
+
+# VI. Creating DataFrames from Varios Data Sources
+
+# VII.Data Wrangling in Spark DataFrame 
+
+## Operarions
+
+## 
+
+# VIII. Spark SQL 
+
+## SQL Operations
+
+# IX. 
+
+# X.
 
