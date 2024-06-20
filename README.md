@@ -862,13 +862,75 @@ df = df.na.fill({"age": 0, "name": "unknown"})
 
 ### 4. General Transformation of DataFrame Structure
 
+- **Sorting Data**: Sort the DataFrame by columns.
+
+```python
+
+```
+ 
+- **Grouping and Aggregation**: Group by columns and perform aggregations.
+
+```python
+
+```
+
+- **Pivoting Data**: Pivot the DataFrame.
+
+```python
+
+```
+ 
+- **Joining DataFrames**: Join multiple DataFrames.
+
+```python
+
+```
+
 ### 5. Working with Characters
+
+- **String Manipulations**: Perform operations like trimming, upper/lower case conversion, substring extraction.
+
+```python
+
+```
+ 
+- **Replacing Values**: Replace specific values in a column.
+
+```python
+
+```
 
 ### 6. Working with Time Series
 
+- **Date and Time Functions**: Extract or manipulate date and time information.
+
+```python
+
+```
+
+- **Window Functions**: Perform calculations over a sliding window.
+
+```python
+
+```
+
 ### 7. Handling Other Formats (Audio, Video, Images)
 
+- **Reading Binary Files**: Read binary files like images.
 
+```python
+
+```
+
+- Using External Libraries: Use external libraries for specific formats.
+
+1. **Audio**: Use libraries like pydub to process audio files.
+2. **Video**: Use libraries like opencv for video processing.
+3. **Images**: Use libraries like PIL or pyspark.ml.image for image processing
+
+```python
+
+```
 
 By utilizing these operations, you can effectively wrangle data in Apache Spark, transforming it into a format that is suitable for analysis or machine learning. Each operation helps to clean, structure, and enhance the data, ensuring that it meets the necessary quality and usability standards.
 
