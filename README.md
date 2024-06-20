@@ -556,9 +556,202 @@ DataFrames in Spark provide a powerful, flexible, and efficient way to handle la
 
 # VI. Creating DataFrames from Varios Data Sources
 
+## Common Data Sources for Apache Spark
+
+1. Flat Files: These include text files, CSV, JSON, XML, and other plain text formats stored in local file systems or distributed storage systems.
+2. Data Warehouses: Structured data stored in data warehousing solutions like Amazon Redshift, Google BigQuery, and Apache Hive.
+3. Data Lakes: Large repositories that store vast amounts of raw data in its native format, such as Amazon S3, Azure Data Lake Storage, and Hadoop Distributed File System (HDFS).
+4. Web Data: Data scraped or fetched from web APIs, web pages, and online data sources.
+5. Databases: Traditional relational databases (RDBMS) like MySQL, PostgreSQL, SQL Server, and NoSQL databases like MongoDB and Cassandra.
+6. Streaming Data Sources: Real-time data streams from platforms like Apache Kafka, Amazon Kinesis, and Apache Flume.
+
+## Data Format
+
+Here is a list of eight data formats that Apache Spark can read and write:
+
+1. **CSV (Comma-Separated Values)**: A plain text format used to store tabular data.
+2. **JSON (JavaScript Object Notation)**: A lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate.
+3. **Parquet**: A columnar storage file format optimized for use with big data processing frameworks.
+4. **ORC (Optimized Row Columnar)**: A highly efficient columnar storage format for Hadoop workloads.
+5. **Avro**: A row-based storage format that provides efficient serialization of data.
+6. **Text**: Simple text files, where each line is a single record.
+7. **XML** (Extensible Markup Language): A markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable.
+8. **Delta Lake**: An open-source storage layer that brings ACID transactions to Apache Spark and big data workloads.
+
+## Creating DataFrames from Various Data Sources
+
+Here is a list of eight data formats that Apache Spark can read and write:
+
+1. **CSV (Comma-Separated Values)**: A plain text format used to store tabular data.
+2. **JSON (JavaScript Object Notation)**: A lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate.
+3. **Parquet**: A columnar storage file format optimized for use with big data processing frameworks.
+4. **ORC (Optimized Row Columnar)**: A highly efficient columnar storage format for Hadoop workloads.
+5. **Avro**: A row-based storage format that provides efficient serialization of data.
+6. **Text**: Simple text files, where each line is a single record.
+7. **XML (Extensible Markup Language)**: A markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable.
+8. **Delta Lake**: An open-source storage layer that brings ACID transactions to Apache Spark and big data workloads.
+
+### 1. Creating DataFrames from Flat Files
+
+**CSV Files**
+
+```python
+from pyspark.sql import SparkSession
+
+# Initialize SparkSession
+spark = SparkSession.builder.appName("CSVExample").getOrCreate()
+
+# Create DataFrame from CSV file
+df = spark.read.csv("path/to/file.csv", header=True, inferSchema=True)
+
+# Show the DataFrame
+df.show()
+```
+
+**JSON Files**
+
+```python
+# Create DataFrame from JSON file
+df = spark.read.json("path/to/file.json")
+
+# Show the DataFrame
+df.show()
+```
+
+**Text Files**
+
+```python
+# Create DataFrame from Text file
+df = spark.read.text("path/to/file.txt")
+
+# Show the DataFrame
+df.show()
+```
+
+### 2. Creating DataFrames from Databases
+
+**MySQL**
+
+```python
+# Create DataFrame from MySQL
+df = spark.read.format("jdbc").option("url", "jdbc:mysql://localhost:3306/mydatabase") \
+    .option("dbtable", "mytable") \
+    .option("user", "myuser") \
+    .option("password", "mypassword") \
+    .load()
+
+# Show the DataFrame
+df.show()
+```
+
+**PostgreSQL**
+
+```python
+# Create DataFrame from MySQL
+df = spark.read.format("jdbc").option("url", "jdbc:mysql://localhost:3306/mydatabase") \
+    .option("dbtable", "mytable") \
+    .option("user", "myuser") \
+    .option("password", "mypassword") \
+    .load()
+
+# Show the DataFrame
+df.show()
+```
+
+### 3. Creating DataFrames from Data Warehouses
+
+**Apache Hive**
+
+```python
+# Configure Hive support
+spark = SparkSession.builder.appName("HiveExample").enableHiveSupport().getOrCreate()
+
+# Create DataFrame from Hive table
+df = spark.sql("SELECT * FROM my_hive_table")
+
+# Show the DataFrame
+df.show()
+```
+
+**Amazon Redshift**
+
+```python
+# Create DataFrame from Redshift
+df = spark.read.format("jdbc").option("url", "jdbc:redshift://examplecluster.abc123xyz789.us-west-2.redshift.amazonaws.com:5439/mydatabase") \
+    .option("dbtable", "mytable") \
+    .option("user", "myuser") \
+    .option("password", "mypassword") \
+    .load()
+
+# Show the DataFrame
+df.show()
+```
+
+### 4. Creating DataFrames from Data Lakes
+
+**Amazon S3**
+
+```python
+# Read from S3
+df = spark.read.csv("s3a://bucket-name/path/to/file.csv", header=True, inferSchema=True)
+
+# Show the DataFrame
+df.show()
+```
+
+**Azure Data Lake Storage**
+
+```python
+# Read from Azure Data Lake Storage
+df = spark.read.csv("adl://example.azuredatalakestore.net/path/to/file.csv", header=True, inferSchema=True)
+
+# Show the DataFrame
+df.show()
+```
+
+### 5. Creating DataFrames from Web Data
+
+**Web APIs**
+
+```python
+import requests
+from pyspark.sql import SparkSession
+
+# Fetch data from web API
+response = requests.get("https://api.example.com/data")
+data = response.json()
+
+# Initialize SparkSession
+spark = SparkSession.builder.appName("WebAPIExample").getOrCreate()
+
+# Create DataFrame from JSON data
+df = spark.createDataFrame(data)
+
+# Show the DataFrame
+df.show()
+
+```
+
+
+### 6. Creating DataFrames from Streaming Data Sources
+
+**Apache Kafka**
+
+```python
+# Create DataFrame from Kafka
+df = spark.read.format("kafka").option("kafka.bootstrap.servers", "localhost:9092") \
+    .option("subscribe", "topic1") \
+    .load()
+
+# Show the DataFrame
+df.show()
+```
+
+By leveraging these data sources and formats, Apache Spark allows you to create DataFrames that can be easily manipulated and analyzed, providing powerful tools for big data processing and analytics.
+
 # VII.Data Wrangling in Spark DataFrame 
 
-## Operarions
+## What's data wrangling ?
 
 ## 
 
