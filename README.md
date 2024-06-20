@@ -751,9 +751,126 @@ By leveraging these data sources and formats, Apache Spark allows you to create 
 
 # VII.Data Wrangling in Spark DataFrame 
 
-## What's data wrangling ?
+## What's Data Wrangling ?
 
-## 
+Data wrangling, also known as data munging, is the process of transforming and mapping data from its raw form into a more usable format. This often involves several steps, including cleaning, structuring, enriching, and validating the data. The goal of data wrangling is to make raw data more accessible and useful for analysis.
+
+### Steps Involved in Data Wrangling
+
+1. **Data Collection**: Gathering raw data from various sources such as databases, files, web APIs, or data lakes.
+2. **Data Cleaning**: Identifying and correcting errors in the data. This includes handling missing values, removing duplicates, correcting inconsistencies, and filtering out irrelevant data.
+3. **Data Transformation**: Converting data into a more appropriate format or structure. This can involve normalizing, aggregating, or scaling the data.
+4. **Data Enrichment**: Enhancing the dataset by adding relevant information from other sources.
+5. **Data Validation**: Ensuring the data meets the required quality and integrity standards. This step often involves verifying data types, ranges, and consistency.
+6. **Data Structuring**: Organizing the data into a format or schema that is suitable for analysis or machine learning. This might include creating new columns, merging datasets, or pivoting data.
+
+### Purpose of Data Wrangling
+
+The primary purpose of data wrangling is to prepare data for analysis or machine learning by ensuring it is clean, structured, and enriched. This process is crucial because raw data is often messy and not immediately suitable for analysis. Data wrangling helps in:
+
+1. **Improving Data Quality**: Cleaning and transforming data ensures that the dataset is accurate, complete, and free from errors, which is essential for reliable analysis.
+2. **Enhancing Data Usability**: Structuring and formatting data makes it easier to analyze and visualize, enabling better decision-making.
+3. **Facilitating Data Integration**: Data wrangling allows for the merging of data from different sources, providing a comprehensive view of the information.
+4. **Enabling Advanced Analytics**: Preparing data properly is a prerequisite for applying advanced analytics techniques such as machine learning, as these methods require clean and well-structured data.
+
+## Operarions
+
+Data wrangling can be performed at multiple levels, including ingestion, column operations, row operations, general transformations of the DataFrame structure, specific character manipulations, time series structuring, and handling other formats such as images, audio, and video.
+
+### 1. For Ingestion
+
+- **Reading Data**: Ingest data from various sources like CSV, JSON, Parquet, Avro, ORC, JDBC, HDFS, S3, and more.
+
+```python
+df = spark.read.csv("path/to/file.csv", header=True, inferSchema=True)
+df = spark.read.json("path/to/file.json")
+df = spark.read.parquet("path/to/file.parquet")
+df = spark.read.jdbc(url="jdbc:mysql://localhost:3306/db", table="table_name", properties={"user": "root", "password": "password"})
+```
+
+- **Schema Definition**: Define schemas explicitly when reading data to ensure correct data types.
+
+```python
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType
+schema = StructType([
+    StructField("name", StringType(), True),
+    StructField("age", IntegerType(), True)
+])
+df = spark.read.schema(schema).csv("path/to/file.csv", header=True)
+```
+
+- **Handling Missing Values**: Specify how to handle missing values during ingestion.
+
+```python
+df = spark.read.option("mode", "DROPMALFORMED").csv("path/to/file.csv", header=True)
+```
+
+### 2. Column Operations
+
+- **Selecting Columns**: Select specific columns.
+
+```python
+df = df.select("name", "age")
+```
+
+- **Renaming Columns**: Rename columns.
+
+```python
+df = df.withColumnRenamed("old_name", "new_name")
+```
+
+- **Adding Columns**: Add new columns based on existing data.
+
+```python
+from pyspark.sql.functions import col, lit
+df = df.withColumn("new_col", col("age") + 5)
+df = df.withColumn("constant_col", lit(1))
+```
+  
+- **Dropping Columns**: Remove columns from the DataFrame.
+
+```python
+df = df.drop("unnecessary_column")
+```
+
+- **Changing Data Types**: Convert column data types.
+
+```python
+df = df.withColumn("age", col("age").cast("string"))
+```
+
+### 3. Row Operations
+
+- **Filtering Rows**: Filter rows based on a condition.
+
+```python
+df = df.filter(col("age") > 18)
+```
+
+- **Removing Duplicates**: Drop duplicate rows.
+
+```python
+df = df.dropDuplicates(["name", "age"])
+```
+
+- **Handling Missing Values**: Handle missing values by dropping or filling.
+
+```python
+df = df.na.drop()
+df = df.na.fill({"age": 0, "name": "unknown"})
+```
+
+### 4. General Transformation of DataFrame Structure
+
+### 5. Working with Characters
+
+### 6. Working with Time Series
+
+### 7. Handling Other Formats (Audio, Video, Images)
+
+
+
+By utilizing these operations, you can effectively wrangle data in Apache Spark, transforming it into a format that is suitable for analysis or machine learning. Each operation helps to clean, structure, and enhance the data, ensuring that it meets the necessary quality and usability standards.
 
 # VIII. Spark SQL 
 
