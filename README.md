@@ -398,15 +398,15 @@ RDDs are a core abstraction in Apache Spark, representing a read-only collection
 
 ## RDD Characteristics
 
-1. Immutable: Once created, RDDs cannot be modified. This immutability ensures consistency and fault tolerance.
+1. **Immutable**: Once created, RDDs cannot be modified. This immutability ensures consistency and fault tolerance.
    
-2. Distributed: RDDs are partitioned across multiple nodes in a cluster, allowing parallel processing.
+2. **Distributed**: RDDs are partitioned across multiple nodes in a cluster, allowing parallel processing.
    
-3. Fault Tolerant: RDDs are designed to handle node failures by recomputing lost data from the lineage information.
+3. **Fault Tolerant**: RDDs are designed to handle node failures by recomputing lost data from the lineage information.
   
-4. Lazy Evaluation: Transformations on RDDs are not executed immediately. They are evaluated lazily, meaning computation is deferred until an action is performed.
+4. **Lazy Evaluation**: Transformations on RDDs are not executed immediately. They are evaluated lazily, meaning computation is deferred until an action is performed.
    
-5. In-Memory Computing: RDDs can cache data in memory, which improves the performance of iterative algorithms.
+5. **In-Memory Computing**: RDDs can cache data in memory, which improves the performance of iterative algorithms.
 
 ## RDD Transformations and Actions
 
@@ -422,28 +422,28 @@ Actions are operations that trigger the execution of transformations and return 
 
 Actions are operations that trigger the execution of transformations and return a result to the driver program or write it to storage.
 
-- collect: Returns all the elements of the RDD as an array to the driver program.
+- **Collect**: Returns all the elements of the RDD as an array to the driver program.
 
 ```python
 rdd = sc.parallelize([1, 2, 3, 4])
 result = rdd.collect()  # [1, 2, 3, 4]
 ```
   
-- count: count: Returns the number of elements in the RDD.
+- **Count**: count: Returns the number of elements in the RDD.
 
 ```python
 rdd = sc.parallelize([1, 2, 3, 4])
 result = rdd.count()  # 4
 ```
 
-- first: Returns the first element of the RDD.
+- **First**: Returns the first element of the RDD.
 
 ```python
 rdd = sc.parallelize([1, 2, 3, 4])
 result = rdd.first()  # 1
 ```
 
-- take: Returns an array with the first n elements of the RDD.
+- **Take**: Returns an array with the first n elements of the RDD.
 
 ```python
 rdd = sc.parallelize([1, 2, 3, 4])
@@ -614,12 +614,12 @@ DataFrames in Spark provide a powerful, flexible, and efficient way to handle la
 
 ## Common Data Sources for Apache Spark
 
-1. Flat Files: These include text files, CSV, JSON, XML, and other plain text formats stored in local file systems or distributed storage systems.
-2. Data Warehouses: Structured data stored in data warehousing solutions like Amazon Redshift, Google BigQuery, and Apache Hive.
-3. Data Lakes: Large repositories that store vast amounts of raw data in its native format, such as Amazon S3, Azure Data Lake Storage, and Hadoop Distributed File System (HDFS).
-4. Web Data: Data scraped or fetched from web APIs, web pages, and online data sources.
-5. Databases: Traditional relational databases (RDBMS) like MySQL, PostgreSQL, SQL Server, and NoSQL databases like MongoDB and Cassandra.
-6. Streaming Data Sources: Real-time data streams from platforms like Apache Kafka, Amazon Kinesis, and Apache Flume.
+1. **Flat Files**: These include text files, CSV, JSON, XML, and other plain text formats stored in local file systems or distributed storage systems.
+2. **Data Warehouses**: Structured data stored in data warehousing solutions like Amazon Redshift, Google BigQuery, and Apache Hive.
+3. **Data Lakes**: Large repositories that store vast amounts of raw data in its native format, such as Amazon S3, Azure Data Lake Storage, and Hadoop Distributed File System (HDFS).
+4. **Web Data**: Data scraped or fetched from web APIs, web pages, and online data sources.
+5. **Databases**: Traditional relational databases (RDBMS) like MySQL, PostgreSQL, SQL Server, and NoSQL databases like MongoDB and Cassandra.
+6. **Streaming Data Sources: Real-time data streams from platforms like Apache Kafka, Amazon Kinesis, and Apache Flume.
 
 ## Data Format
 
@@ -1065,7 +1065,7 @@ filteredDF.show()
 
 Spark SQL supports a wide range of operations. Here are some of the key operations along with examples:
 
-1. Selecting Data:
+1. **Selecting Data**:
 
 ```python
 from pyspark.sql import SparkSession
@@ -1085,7 +1085,7 @@ sqlDF = spark.sql("SELECT Name, Age FROM people")
 sqlDF.show()
 ```
 
-2. Filtering Data:
+2. **Filtering Data**:
 
 ```python
 # Filter rows based on a condition
@@ -1093,7 +1093,7 @@ sqlDF = spark.sql("SELECT Name, Age FROM people WHERE Age > 28")
 sqlDF.show()
 ```
 
-3. Aggregating Data:
+3. **Aggregating Data**:
 
 ```python
 # Group by and aggregate
@@ -1102,7 +1102,7 @@ sqlDF.show()
 
 ```
 
-4. Joining DataFrames:
+4. **Joining DataFrames**:
 
 ```python
 # Create another DataFrame
@@ -1117,7 +1117,7 @@ sqlDF = spark.sql("SELECT p.Name, p.Age, pg.Gender FROM people p JOIN people_gen
 sqlDF.show()
 
 ```
-5. Sorting Data:
+5. **Sorting Data**:
 
 ```python
 # Sort the DataFrame
@@ -1137,7 +1137,7 @@ sqlDF = spark.sql("SELECT * FROM people_union")
 sqlDF.show()
 ```
 
-7. Pivoting Data:
+7. **Pivoting Data**:
 
 ```python
 # Pivot the DataFrame (using GROUP BY and aggregation for pivot)
@@ -1147,7 +1147,7 @@ pivotDF = df.groupBy("Name").pivot("Age").count()
 pivotDF.show()
 ```
 
-8. UDFs (User-Defined Functions):
+8. **UDFs (User-Defined Functions)**:
 
 ```python
 from pyspark.sql.functions import udf
@@ -1230,9 +1230,13 @@ PySpark provides powerful tools for data analysis, allowing you to perform compl
 Spark's MLlib library offers scalable machine learning algorithms and utilities.
 
 **Classification**: Algorithms like Logistic Regression, Decision Trees, Random Forests.
+
 **Regression**: Linear Regression, Generalized Linear Models.
+
 **Clustering**: K-means, Gaussian Mixture Models.
+
 **Recommendation Systems**: Alternating Least Squares (ALS) for collaborative filtering.
+
 **Feature Engineering**: Tools for transforming raw data into features suitable for machine learning models.
 
 ## 3. Graph Processing
@@ -1240,6 +1244,7 @@ Spark's MLlib library offers scalable machine learning algorithms and utilities.
 GraphX is the graph processing API in Spark.
 
 **Graph Algorithms**: Implement graph algorithms like PageRank, Connected Components, Triangle Counting.
+
 **Graph Analytics**: Analyze large-scale graphs to uncover patterns and relationships.
 
 
@@ -1248,19 +1253,77 @@ GraphX is the graph processing API in Spark.
 Integrate with libraries like Matplotlib, Seaborn, and Plotly to visualize data.
 
 **Interactive Plots**: Create interactive visualizations for data exploration.
+
 **Dashboards**: Build dashboards for real-time monitoring and reporting.
 
 
 ---------------------------------------------
 # X.  PySpark Applications 
 
-### 1. 
+### 1. Aplication nª 1
 
-### 2.
+### 2. Aplication nª 2
 
-### 3.
+### 3. Aplication nª 3
+
+### 4. Aplication nª 4
+
+### 5. Aplication nª 5
 
 ---------------------------------------------
 # XI. Other PySpark Resources
 
 Staying updated with the latest developments in PySpark is crucial for anyone involved in Data field. Here is a list of some exclusive websites and resources dedicated to PySpark that can help you keep abreast of the latest trends, research, and tools.
+
+1. Apache Spark Official Documentation
+
+URL: [Apache Spark Documentation](https://spark.apache.org/documentation.html)
+Description: The official documentation provides comprehensive information about all aspects of Spark, including PySpark. It includes user guides, API references, and examples.
+
+2. Databricks Community Edition
+
+URL: Databricks Community Edition
+Description: Databricks offers a free Community Edition where you can practice PySpark. It also provides tutorials, notebooks, and a platform to run your Spark jobs.
+
+3. Spark + AI Summit
+
+URL: Spark + AI Summit
+Description: An annual conference hosted by Databricks featuring talks, workshops, and keynotes from industry experts on Spark, AI, and machine learning. Recordings of past sessions are available online.
+
+4. Stack Overflow
+
+URL: Stack Overflow
+Description: A popular Q&A platform where you can ask questions and find answers related to PySpark. The PySpark tag has a wide range of questions and answers from the community.
+
+5. GitHub Repositories
+
+URL: GitHub - Apache Spark
+Description: The official GitHub repository for Apache Spark. You can explore the source code, contribute to the project, and find example projects and issues.
+
+6. PySpark Tutorials on Medium
+
+URL: Medium - PySpark
+Description: Medium hosts numerous articles and tutorials on PySpark written by data scientists and engineers. It’s a great resource for learning new techniques and best practices.
+
+7. Kaggle Datasets and Notebooks
+
+URL: Kaggle - PySpark
+Description: Kaggle offers datasets and notebooks where you can find and share PySpark projects. It’s a great platform for practical learning and experimentation.
+
+8. YouTube Channels
+
+URL: YouTube - PySpark
+Description: There are several YouTube channels dedicated to PySpark tutorials and webinars. These videos can help you learn PySpark through visual and practical demonstrations.
+
+9. Coursera - Big Data Analysis with Scala and Spark
+
+URL: Coursera - Spark Course
+Description: A course offered by Coursera that covers big data analysis using Spark. It includes hands-on projects and assignments to enhance your PySpark skills.
+
+10. PySpark User Mailing List
+
+URL: PySpark User Mailing List
+Description: The user mailing list for PySpark hosted by Apache. It’s a place to discuss PySpark-related issues, share solutions, and stay updated with announcements and developments.
+These resources provide a comprehensive set of tools, documentation, and community support to help you stay current with PySpark and enhance your skills in data processing and analysis.
+
+# XII. PySpark tutorials
