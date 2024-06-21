@@ -1212,6 +1212,7 @@ spark.catalog.listTables()
 ## So...
 
 Spark SQL is a powerful component of Apache Spark that integrates SQL queries with the DataFrame API, providing a unified interface for processing structured data. By leveraging the power of SQL and the flexibility of DataFrames, Spark SQL enables efficient and scalable data processing, making it an essential tool for data engineers and analysts.
+
 ---------------------------------------------
 # IX. Other Uses and Applications of PySpark
 
