@@ -1068,46 +1068,103 @@ Spark SQL supports a wide range of operations. Here are some of the key operatio
 1. Selecting Data:
 
 ```python
+from pyspark.sql import SparkSession
 
+# Initialize SparkSession
+spark = SparkSession.builder.appName("SparkSQLExample").getOrCreate()
+
+# Create a DataFrame
+data = [("Alice", 29), ("Bob", 31), ("Catherine", 27)]
+df = spark.createDataFrame(data, ["Name", "Age"])
+
+# Register the DataFrame as a temporary view
+df.createOrReplaceTempView("people")
+
+# Select specific columns
+sqlDF = spark.sql("SELECT Name, Age FROM people")
+sqlDF.show()
 ```
 
 2. Filtering Data:
 
 ```python
-
+# Filter rows based on a condition
+sqlDF = spark.sql("SELECT Name, Age FROM people WHERE Age > 28")
+sqlDF.show()
 ```
 
 3. Aggregating Data:
 
 ```python
+# Group by and aggregate
+sqlDF = spark.sql("SELECT Age, COUNT(*) AS count FROM people GROUP BY Age")
+sqlDF.show()
 
 ```
 
 4. Joining DataFrames:
 
 ```python
+# Create another DataFrame
+data2 = [("Alice", "F"), ("Bob", "M"), ("Catherine", "F")]
+df2 = spark.createDataFrame(data2, ["Name", "Gender"])
+
+# Register the second DataFrame as a temporary view
+df2.createOrReplaceTempView("people_gender")
+
+# Join two DataFrames
+sqlDF = spark.sql("SELECT p.Name, p.Age, pg.Gender FROM people p JOIN people_gender pg ON p.Name = pg.Name")
+sqlDF.show()
 
 ```
-6. Sorting Data:
+5. Sorting Data:
 
 ```python
+# Sort the DataFrame
+sqlDF = spark.sql("SELECT Name, Age FROM people ORDER BY Age DESC")
+sqlDF.show()
 
 ```
 
-8. Union and UnionAll:
+6. Union and UnionAll:
 
 ```python
+# Union two DataFrames (Note: UnionAll is just Union in SQL context)
+df_union = df.union(df2)
+df_union.createOrReplaceTempView("people_union")
 
+sqlDF = spark.sql("SELECT * FROM people_union")
+sqlDF.show()
 ```
 
-9. Pivoting Data:
+7. Pivoting Data:
 
 ```python
+# Pivot the DataFrame (using GROUP BY and aggregation for pivot)
+# Note: Pivot functionality in SQL syntax is complex and depends on the SQL dialect
+# Example using Spark SQL:
+pivotDF = df.groupBy("Name").pivot("Age").count()
+pivotDF.show()
+```
+
+8. UDFs (User-Defined Functions):
+
+```python
+from pyspark.sql.functions import udf
+from pyspark.sql.types import IntegerType
+
+# Define a UDF
+def age_squared(age):
+    return age * age
+
+# Register the UDF
+spark.udf.register("age_squared_udf", age_squared, IntegerType())
+
+# Use the UDF in SQL
+sqlDF = spark.sql("SELECT Name, Age, age_squared_udf(Age) AS AgeSquared FROM people")
+sqlDF.show()
 
 ```
-10. UDFs (User-Defined Functions):
-
-
 
 ## Creating and managing temporary views
 
@@ -1116,13 +1173,20 @@ Temporary views in Spark SQL allow you to create a logical table that is scoped 
 **Creating a Temporary View**:
 
 ```python
+# Create a DataFrame
+data = [("Alice", 29), ("Bob", 31), ("Catherine", 27)]
+df = spark.createDataFrame(data, ["Name", "Age"])
 
+# Create a temporary view
+df.createOrReplaceTempView("people")
 ```
 
 **Querying a Temporary View**:
 
 ```python
-
+# Perform SQL query on the temporary view
+sqlDF = spark.sql("SELECT Name, Age FROM people WHERE Age > 28")
+sqlDF.show()
 ```
 
 **Managing Temporary Views**:
@@ -1130,19 +1194,19 @@ Temporary views in Spark SQL allow you to create a logical table that is scoped 
 1. Drop a Temporary View:
 
 ```python
-
+spark.catalog.dropTempView("people")
 ```
 
 2. Check if a Temporary View Exists:
 
 ```python
-
+spark.catalog.tableExists("people")
 ```
 
 3. List All Temporary Views:
 
 ```python
-
+spark.catalog.listTables()
 ```
 
 ## So...
@@ -1151,8 +1215,39 @@ Spark SQL is a powerful component of Apache Spark that integrates SQL queries wi
 ---------------------------------------------
 # IX. Other Uses and Applications of PySpark
 
+Besides performing data engineering tasks with PySpark, there are numerous other capabilities and applications that PySpark can facilitate. Here are some key areas where PySpark can be effectively utilized:
 
-## Machine Learning
+## 1. Data Analysis
+
+PySpark provides powerful tools for data analysis, allowing you to perform complex aggregations, summarizations, and visualizations of large datasets.
+
+**Descriptive Statistics**: Calculate summary statistics, such as mean, median, standard deviation, etc.
+**Data Exploration**: Explore datasets with various filtering, grouping, and aggregation techniques.
+
+## 2. Machine Learning
+
+Spark's MLlib library offers scalable machine learning algorithms and utilities.
+
+**Classification**: Algorithms like Logistic Regression, Decision Trees, Random Forests.
+**Regression**: Linear Regression, Generalized Linear Models.
+**Clustering**: K-means, Gaussian Mixture Models.
+**Recommendation Systems**: Alternating Least Squares (ALS) for collaborative filtering.
+**Feature Engineering**: Tools for transforming raw data into features suitable for machine learning models.
+
+## 3. Graph Processing
+
+GraphX is the graph processing API in Spark.
+
+**Graph Algorithms**: Implement graph algorithms like PageRank, Connected Components, Triangle Counting.
+**Graph Analytics**: Analyze large-scale graphs to uncover patterns and relationships.
+
+
+## 4. Data Visualization
+
+Integrate with libraries like Matplotlib, Seaborn, and Plotly to visualize data.
+
+**Interactive Plots**: Create interactive visualizations for data exploration.
+**Dashboards**: Build dashboards for real-time monitoring and reporting.
 
 
 ---------------------------------------------
