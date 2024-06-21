@@ -1008,12 +1008,152 @@ By utilizing these operations, you can effectively wrangle data in Apache Spark,
 ---------------------------------------------
 # VIII. Spark SQL 
 
-## 
+Spark SQL is a module in Apache Spark that integrates relational processing with Spark's functional programming API. It allows you to query structured data inside Spark programs using SQL as well as the DataFrame API. This integration enables powerful and expressive data processing capabilities, leveraging the strengths of both relational and functional paradigms.
 
-## SQL Operations
+## What's Spark SQL ?
 
+Spark SQL is a Spark module for structured data processing. It provides a programming abstraction called DataFrames and can also act as a distributed SQL query engine. It allows for seamless integration between SQL queries and complex analytics, providing a unified interface for querying and manipulating structured data.
+
+Spark SQL provides several advantages, including:
+
+- The ability to run SQL queries over data stored in various formats.
+- Interoperability between SQL and Spark’s core APIs, allowing for complex data manipulation and analytics.
+- Optimization through the Catalyst optimizer and Tungsten execution engine for improved performance.
+
+## Key Features of Spark SQL.
+
+1. **Unified Data Access**: Spark SQL provides a common way to access a variety of data sources such as Hive, Avro, Parquet, ORC, JSON, and JDBC.
+2. **Hive Compatibility**: It supports querying data stored in Apache Hive, allowing for compatibility with existing Hive queries and UDFs.
+3. **SQL Interface**: Allows users to run SQL queries, making it easy for those familiar with SQL to interact with Spark.
+4. **Catalyst Optimizer**: A highly extensible query optimizer that ensures efficient query execution.
+5. **Seamless Integration**: Integration with Spark’s core APIs allows users to intermix SQL queries with complex analytics.
+6. **DataFrames and Datasets**: Provides high-level abstractions for manipulating structured data.
+
+
+## Perform SQL like queries on Spark DataFrames
+
+Spark SQL allows you to perform SQL-like queries on DataFrames using both SQL syntax and the DataFrame API. Here’s an example of both approaches:
+
+1.  SQL Syntax:
+
+```python
+from pyspark.sql import SparkSession
+
+# Initialize SparkSession
+spark = SparkSession.builder.appName("SparkSQLExample").getOrCreate()
+
+# Create a DataFrame
+data = [("Alice", 29), ("Bob", 31), ("Catherine", 27)]
+df = spark.createDataFrame(data, ["Name", "Age"])
+
+# Register the DataFrame as a temporary view
+df.createOrReplaceTempView("people")
+
+# Perform SQL query
+sqlDF = spark.sql("SELECT Name, Age FROM people WHERE Age > 28")
+sqlDF.show()
+```
+2. DataFrame API:
+
+```python
+# Using DataFrame API
+filteredDF = df.filter(df["Age"] > 28).select("Name", "Age")
+filteredDF.show()
+```
+
+## Spark SQL Operations
+
+Spark SQL supports a wide range of operations. Here are some of the key operations along with examples:
+
+1. Selecting Data:
+
+```python
+
+```
+
+2. Filtering Data:
+
+```python
+
+```
+
+3. Aggregating Data:
+
+```python
+
+```
+
+4. Joining DataFrames:
+
+```python
+
+```
+6. Sorting Data:
+
+```python
+
+```
+
+8. Union and UnionAll:
+
+```python
+
+```
+
+9. Pivoting Data:
+
+```python
+
+```
+10. UDFs (User-Defined Functions):
+
+
+
+## Creating and managing temporary views
+
+Temporary views in Spark SQL allow you to create a logical table that is scoped to the Spark session. These views can be queried using SQL syntax, making it easier to interact with DataFrames.
+
+**Creating a Temporary View**:
+
+```python
+
+```
+
+**Querying a Temporary View**:
+
+```python
+
+```
+
+**Managing Temporary Views**:
+
+1. Drop a Temporary View:
+
+```python
+
+```
+
+2. Check if a Temporary View Exists:
+
+```python
+
+```
+
+3. List All Temporary Views:
+
+```python
+
+```
+
+## So...
+
+Spark SQL is a powerful component of Apache Spark that integrates SQL queries with the DataFrame API, providing a unified interface for processing structured data. By leveraging the power of SQL and the flexibility of DataFrames, Spark SQL enables efficient and scalable data processing, making it an essential tool for data engineers and analysts.
 ---------------------------------------------
 # IX. Other Uses and Applications of PySpark
+
+
+## Machine Learning
+
 
 ---------------------------------------------
 # X.  PySpark Applications 
