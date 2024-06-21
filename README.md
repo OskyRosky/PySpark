@@ -86,101 +86,120 @@ Homebrew is a package manager for macOS that simplifies the installation of soft
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-bash
-
-
-
 3.Follow the on-screen instructions to complete the installation.
 
-Step 2: Install Java Development Kit (JDK)
+**Step 2: Install Java Development Kit (JDK)**
+
 Apache Spark requires Java. You can install the JDK using Homebrew:
 
-In the Terminal, run the following command to install the latest version of JDK:
+1. In the Terminal, run the following command to install the latest version of JDK:
 
 ```bash
-
-
+brew install openjdk
 ```
 
-Copiar código
-brew install openjdk
-Once the installation is complete, add the JDK to your PATH by adding the following lines to your ~/.zshrc or ~/.bash_profile file (depending on your shell):
-bash
-Copiar código
+2. Once the installation is complete, add the JDK to your PATH by adding the following lines to your ~/.zshrc or ~/.bash_profile file (depending on your shell):
+
+```bash
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export CPPFLAGS="-I/usr/local/opt/openjdk/include"
-Apply the changes by running:
-bash
-Copiar código
-source ~/.zshrc   # or source ~/.bash_profile
-Verify the installation by running:
-bash
-Copiar código
-java -version
+```
 
-Step 3: Install Apache Spark
+3. Apply the changes by running:
+
+```bash
+source ~/.zshrc   # or source ~/.bash_profile
+```
+
+4. Verify the installation by running:
+
+```bash
+java -version
+```
+
+**Step 3: Install Apache Spark**
+
 Now that you have Java installed, you can install Apache Spark using Homebrew:
 
-In the Terminal, run the following command to install Apache Spark:
-bash
-Copiar código
-brew install apache-spark
+1. In the Terminal, run the following command to install Apache Spark:
 
-Step 4: Configure Environment Variables
+```bash
+brew install apache-spark
+```
+
+**Step 4: Configure Environment Variables**
 
 To make Spark commands available globally, you need to set up the environment variables.
 
-Open your ~/.zshrc or ~/.bash_profile file:
-bash
-Copiar código
+1. Open your ~/.zshrc or ~/.bash_profile file:
+
+```bash
 nano ~/.zshrc   # or nano ~/.bash_profile
-Add the following lines to the file:
-bash
-Copiar código
+```
+
+2. Add the following lines to the file:
+
+```bash
 export SPARK_HOME=/usr/local/Cellar/apache-spark/<version>
 export PATH=$SPARK_HOME/bin:$PATH
+```
 Replace <version> with the version number installed by Homebrew (you can find it by looking inside /usr/local/Cellar/apache-spark/).
-Apply the changes by running:
-bash
-Copiar código
-source ~/.zshrc   # or source ~/.bash_profile
 
-Step 5: Verify the Installation
+3. Apply the changes by running:
+
+```bash
+source ~/.zshrc   # or source ~/.bash_profile
+```
+
+**Step 5: Verify the Installation**
 
 To ensure Spark is installed correctly, you can run the Spark shell:
 
-In the Terminal, run:
-bash
-Copiar código
-spark-shell
-You should see the Spark shell starting, indicating that Spark is correctly installed and configured.
+1. In the Terminal, run:
 
-Step 6: Install PySpark
+```bash
+spark-shell
+```
+
+2. You should see the Spark shell starting, indicating that Spark is correctly installed and configured.
+
+**Step 6: Install PySpark**
 
 If you want to use PySpark, you need to install it via pip:
 
-Ensure you have Python installed. If not, install it using Homebrew:
-bash
-Copiar código
+1. Ensure you have Python installed. If not, install it using Homebrew:
+
+```bash
 brew install python
-Install PySpark using pip:
-bash
-Copiar código
+```
+
+2. Install PySpark using pip:
+
+```bash
 pip install pyspark
-Verify the installation by running a PySpark shell:
-bash
-Copiar código
+```
+
+3. Verify the installation by running a PySpark shell:
+
+```bash
+
 pyspark
-Troubleshooting
-JAVA_HOME not set: If you encounter issues related to Java, make sure your JAVA_HOME is set correctly. You can set it by adding the following to your ~/.zshrc or ~/.bash_profile:
-bash
-Copiar código
+```
+
+**Troubleshooting**
+- JAVA_HOME not set: If you encounter issues related to Java, make sure your JAVA_HOME is set correctly. You can set it by adding the following to your ~/.zshrc or ~/.bash_profile:
+
+```bash
 export JAVA_HOME=$(/usr/libexec/java_home)
+```
+
 Then apply the changes by running:
-bash
-Copiar código
+
+```bash
 source ~/.zshrc   # or source ~/.bash_profile
-Permission issues: If you encounter permission issues during installation, you might need to prepend the installation commands with sudo.
+```
+
+-**Permission issues**: If you encounter permission issues during installation, you might need to prepend the installation commands with *sudo*.
 
 This guide should help you get Apache Spark up and running on your Mac machine.
 
@@ -207,8 +226,15 @@ Click "New" and add %JAVA_HOME%\bin.
 Verify the Installation:
 
 Open Command Prompt and run:
-cmd
-Copiar código
+
+```cmd
+
+```
+
+```cmd
+
+```
+
 java -version
 Ensure the version information is displayed correctly.
 
