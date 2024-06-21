@@ -506,7 +506,6 @@ rdd.saveAsTextFile("path/to/outputdir")
 In summary, RDDs are a fundamental component of Apache Spark, providing a robust and flexible way to perform distributed data processing. Understanding RDD characteristics, transformations, and actions is crucial for effectively utilizing Spark's capabilities for big data analytics.
 
 ---------------------------------------------
-
 # V. Spark DataFrane 
 
 DataFrames in Apache Spark provide a higher-level abstraction than RDDs, offering a powerful and flexible way to perform data processing tasks. They are similar to data frames in R or Python's pandas library but optimized for distributed computing.
@@ -806,6 +805,7 @@ df.show()
 
 By leveraging these data sources and formats, Apache Spark allows you to create DataFrames that can be easily manipulated and analyzed, providing powerful tools for big data processing and analytics.
 
+---------------------------------------------
 # VII.Data Wrangling in Spark DataFrame 
 
 ## What's Data Wrangling ?
@@ -1005,14 +1005,17 @@ image_df = ImageSchema.readImages("path/to/images")
 
 By utilizing these operations, you can effectively wrangle data in Apache Spark, transforming it into a format that is suitable for analysis or machine learning. Each operation helps to clean, structure, and enhance the data, ensuring that it meets the necessary quality and usability standards.
 
+---------------------------------------------
 # VIII. Spark SQL 
 
 ## 
 
 ## SQL Operations
 
+---------------------------------------------
 # IX. Other Uses and Applications of PySpark
 
+---------------------------------------------
 # X.  PySpark Applications 
 
 ### 1. 
@@ -1021,6 +1024,7 @@ By utilizing these operations, you can effectively wrangle data in Apache Spark,
 
 ### 3.
 
+---------------------------------------------
 # XI. Other PySpark Resources
 
 Staying updated with the latest developments in PySpark is crucial for anyone involved in Data field. Here is a list of some exclusive websites and resources dedicated to PySpark that can help you keep abreast of the latest trends, research, and tools.
