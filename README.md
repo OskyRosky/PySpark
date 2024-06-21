@@ -205,111 +205,120 @@ This guide should help you get Apache Spark up and running on your Mac machine.
 
 ## Detailed Guide for Installing Apache Spark on Windows
 
-Step 1: Install Java Development Kit (JDK)
+**Step 1: Install Java Development Kit (JDK)**
 
 Apache Spark requires Java. You can install the JDK as follows:
 
-Download JDK: Go to the Oracle JDK download page or OpenJDK download page and download the installer for the latest version of JDK.
+1. Download JDK: Go to the Oracle JDK download page or OpenJDK download page and download the installer for the latest version of JDK.
 
-Install JDK: Run the downloaded installer and follow the on-screen instructions to complete the installation.
+2. Install JDK: Run the downloaded installer and follow the on-screen instructions to complete the installation.
 
-Set JAVA_HOME Environment Variable:
+3. Set JAVA_HOME Environment Variable:
 
-Open the Start menu, search for "Environment Variables," and select "Edit the system environment variables."
-In the System Properties window, click on the "Environment Variables" button.
-In the Environment Variables window, under System variables, click "New" and add the following:
-Variable name: JAVA_HOME
-Variable value: C:\Program Files\Java\jdk-<your_version>
-Add Java to the PATH variable:
+- Open the Start menu, search for "Environment Variables," and select "Edit the system environment variables."
+- In the System Properties window, click on the "Environment Variables" button.
+- In the Environment Variables window, under System variables, click "New" and add the following:
+    1. Variable name: JAVA_HOME
+    2. Variable value: C:\Program Files\Java\jdk-<your_version>
+- Add Java to the PATH variable:
 Find the Path variable in the System variables section, select it, and click "Edit."
 Click "New" and add %JAVA_HOME%\bin.
-Verify the Installation:
 
-Open Command Prompt and run:
+4. Verify the Installation:
 
-```cmd
-
-```
+- Open Command Prompt and run:
 
 ```cmd
-
-```
-
 java -version
-Ensure the version information is displayed correctly.
+```
 
-Step 2: Install Hadoop (WinUtils.exe)
+
+- Ensure the version information is displayed correctly.
+
+**Step 2: Install Hadoop (WinUtils.exe)**
 
 Apache Spark needs winutils.exe for Hadoop to run correctly on Windows.
 
-Download WinUtils:
+1. Download WinUtils:
 
-Download winutils.exe from a trusted source, such as the GitHub repository for Hadoop binaries.
-Set HADOOP_HOME Environment Variable:
+- Download winutils.exe from a trusted source, such as the GitHub repository for Hadoop binaries.
 
-Create a folder, e.g., C:\hadoop\bin, and place winutils.exe inside this folder.
-Open the Environment Variables window as described in Step 1.
-In the System variables section, click "New" and add the following:
-Variable name: HADOOP_HOME
-Variable value: C:\hadoop
-Add Hadoop to the PATH Variable:
+2. Set HADOOP_HOME Environment Variable:
 
-Edit the Path variable in the System variables section.
-Click "New" and add %HADOOP_HOME%\bin.
+- Create a folder, e.g., C:\hadoop\bin, and place winutils.exe inside this folder.
 
-Step 3: Install Apache Spark
+- Open the Environment Variables window as described in Step 1.
 
-Download Apache Spark:
+- In the System variables section, click "New" and add the following:
+   1. Variable name: HADOOP_HOME
+   2. Variable value: C:\hadoop
 
-Go to the Apache Spark download page.
-Choose a Spark release, and a package type (e.g., pre-built for Hadoop 2.7).
-Download the binary .tgz file.
-Extract Apache Spark:
+- Add Hadoop to the PATH Variable:
 
-Extract the downloaded .tgz file to a directory, e.g., C:\spark.
-Set SPARK_HOME Environment Variable:
+    1. Edit the Path variable in the System variables section.
+    2. Click "New" and add %HADOOP_HOME%\bin.
 
-Open the Environment Variables window.
-In the System variables section, click "New" and add the following:
-Variable name: SPARK_HOME
-Variable value: C:\spark\spark-<your_version>
-Add Spark to the PATH variable:
-Edit the Path variable in the System variables section.
-Click "New" and add %SPARK_HOME%\bin.
+**Step 3: Install Apache Spark**
 
-Step 4: Install Python and PySpark
+1. Download Apache Spark:
 
-Install Python:
+- Go to the Apache Spark download page.
+- Choose a Spark release, and a package type (e.g., pre-built for Hadoop 2.7).
+- Download the binary .tgz file.
 
-Download and install Python from the Python website.
-Ensure you check the option "Add Python to PATH" during installation.
-Install PySpark:
+2. Extract Apache Spark:
 
-Open Command Prompt and run:
-cmd
-Copiar código
+- Extract the downloaded .tgz file to a directory, e.g., C:\spark.
+
+3. Set SPARK_HOME Environment Variable:
+
+- Open the Environment Variables window.
+- In the System variables section, click "New" and add the following:
+    1. Variable name: SPARK_HOME
+    2. Variable value: C:\spark\spark-<your_version>
+- Add Spark to the PATH variable:
+    1. Edit the Path variable in the System variables section.
+    2. Click "New" and add %SPARK_HOME%\bin.
+
+**Step 4: Install Python and PySpark**
+
+1. Install Python:
+
+- Download and install Python from the Python website.
+- Ensure you check the option "Add Python to PATH" during installation.
+
+2. Install PySpark:
+
+- Open Command Prompt and run:
+
+```cmd
 pip install pyspark
+```
 
-Step 5: Verify the Installation
+**Step 5: Verify the Installation**
 
-Verify Spark Shell:
+1. Verify Spark Shell:
 
-Open Command Prompt and run:
-cmd
-Copiar código
+- Open Command Prompt and run:
+```cmd
 spark-shell
-You should see the Spark shell starting, indicating that Spark is correctly installed.
-Verify PySpark:
+```
+- You should see the Spark shell starting, indicating that Spark is correctly installed.
 
-Open Command Prompt and run:
-cmd
-Copiar código
+2. Verify PySpark:
+
+- Open Command Prompt and run:
+```cmd
 pyspark
-You should see the PySpark shell starting, indicating that PySpark is correctly installed.
-Troubleshooting
-JAVA_HOME not set: If you encounter issues related to Java, ensure your JAVA_HOME environment variable is set correctly.
-WinUtils.exe not found: Ensure winutils.exe is placed in the correct directory (C:\hadoop\bin) and that the HADOOP_HOME variable is set correctly.
-PATH variable issues: Ensure all required paths (Java, Hadoop, Spark) are correctly added to the PATH variable.
+```
+
+- You should see the PySpark shell starting, indicating that PySpark is correctly installed.
+
+**Troubleshooting**
+
+- **JAVA_HOME not set**: If you encounter issues related to Java, ensure your JAVA_HOME environment variable is set correctly.
+- **WinUtils.exe not found**: Ensure winutils.exe is placed in the correct directory (C:\hadoop\bin) and that the HADOOP_HOME variable is set correctly.
+- **PATH variable issues**: Ensure all required paths (Java, Hadoop, Spark) are correctly added to the PATH variable.
 
 This guide should help you get Apache Spark up and running on your Windows machine
 
