@@ -75,21 +75,33 @@ In summary, Apache Spark is a robust and versatile framework designed for effici
 
 ## Detailed Guide for Installing Apache Spark on Mac
 
-Step 1: Install Homebrew
+**Step 1: Install Homebrew**
+
 Homebrew is a package manager for macOS that simplifies the installation of software. If you don't already have Homebrew installed, follow these steps:
 
-Open the Terminal application.
-Install Homebrew by running the following command:
-bash
-Copiar código
+1. Open the Terminal application.
+2. Install Homebrew by running the following command:
+
+```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-Follow the on-screen instructions to complete the installation.
+```
+
+bash
+
+
+
+3.Follow the on-screen instructions to complete the installation.
 
 Step 2: Install Java Development Kit (JDK)
 Apache Spark requires Java. You can install the JDK using Homebrew:
 
 In the Terminal, run the following command to install the latest version of JDK:
-bash
+
+```bash
+
+
+```
+
 Copiar código
 brew install openjdk
 Once the installation is complete, add the JDK to your PATH by adding the following lines to your ~/.zshrc or ~/.bash_profile file (depending on your shell):
