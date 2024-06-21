@@ -29,7 +29,8 @@
 ---------------------------------------------
 
 # :computer: Py Spark :computer:
- 
+
+---------------------------------------------
 # I. Introduction to PySpark
 
 Apache Spark is a powerful open-source processing engine built around speed, ease of use, and sophisticated analytics. Spark has become a key player in the world of Big Data due to its ability to handle large-scale data processing through distributed computing. Originating from the AMPLab at UC Berkeley, Spark was designed to perform tasks quickly by utilizing in-memory processing and optimizing data distribution across multiple machines. The architecture of Spark revolves around the concept of clusters, where a master node oversees the allocation of tasks to worker nodes. These worker nodes execute tasks in parallel using the MapReduce paradigm, enabling efficient data processing and storage. The flexibility of Spark allows it to be used with multiple programming languages, including Python, through the PySpark framework, making it accessible and versatile for various big data applications.
@@ -71,6 +72,7 @@ PySpark is the Python API for Apache Spark, allowing Python developers to levera
 
 In summary, Apache Spark is a robust and versatile framework designed for efficient large-scale data processing. Its architecture, which utilizes clusters of machines to distribute tasks and leverage in-memory processing, significantly enhances performance and scalability. The combination of Apache's open-source community support and Spark's ability to handle diverse data processing tasks—from batch processing to real-time streaming—makes it an invaluable tool in the realm of Big Data. Through PySpark, Python developers can harness the power of Spark, enabling seamless integration and advanced analytics capabilities within the Python ecosystem. This synergy between Spark and Python opens up a world of possibilities for data scientists and engineers, driving innovation and efficiency in data processing workflows.
 
+---------------------------------------------
 # II. Spark Installation on Mac and Windos
 
 ## Detailed Guide for Installing Apache Spark on Mac
@@ -322,6 +324,8 @@ pyspark
 
 This guide should help you get Apache Spark up and running on your Windows machine
 
+---------------------------------------------
+
 # III. Spark Context and Spark Session
 
 Apache Spark provides two essential components for interacting with the cluster and executing operations: SparkContext and SparkSession. These components serve as the main entry points for Spark functionalities, allowing users to create RDDs, DataFrames, and execute Spark jobs. While SparkContext was the primary entry point in older versions of Spark, SparkSession was introduced in Spark 2.0 to unify the functionalities and simplify the user experience.
@@ -381,6 +385,8 @@ In this example, SparkSession.builder is used to configure the application name 
 ## So...
 
 Understanding SparkContext and SparkSession is crucial for effectively utilizing Apache Spark. While SparkContext provides a foundational entry point for Spark operations, SparkSession simplifies and unifies the user experience by consolidating multiple contexts into a single API. This evolution from SparkContext to SparkSession reflects Spark's continuous efforts to improve usability and functionality for big data processing.
+
+---------------------------------------------
 
 # IV. Spark RDD 
 
@@ -499,6 +505,8 @@ rdd.saveAsTextFile("path/to/outputdir")
 
 In summary, RDDs are a fundamental component of Apache Spark, providing a robust and flexible way to perform distributed data processing. Understanding RDD characteristics, transformations, and actions is crucial for effectively utilizing Spark's capabilities for big data analytics.
 
+---------------------------------------------
+
 # V. Spark DataFrane 
 
 DataFrames in Apache Spark provide a higher-level abstraction than RDDs, offering a powerful and flexible way to perform data processing tasks. They are similar to data frames in R or Python's pandas library but optimized for distributed computing.
@@ -600,6 +608,8 @@ jsonDF.select("Name", "Age").where("Age > 28").show()
 ```
 
 DataFrames in Spark provide a powerful, flexible, and efficient way to handle large-scale data processing tasks. They offer significant advantages over RDDs, including optimized execution, ease of use, and compatibility with various data sources, making them an essential tool for data engineers and data scientists.
+
+---------------------------------------------
 
 # VI. Creating DataFrames from Varios Data Sources
 
