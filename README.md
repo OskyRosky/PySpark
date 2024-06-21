@@ -912,25 +912,26 @@ df = df.na.fill({"age": 0, "name": "unknown"})
 - **Sorting Data**: Sort the DataFrame by columns.
 
 ```python
-
+df = df.sort("age", ascending=False)
 ```
  
 - **Grouping and Aggregation**: Group by columns and perform aggregations.
 
 ```python
-
+df = df.groupBy("age").count()
+df = df.groupBy("department").agg({"salary": "avg", "age": "max"})
 ```
 
 - **Pivoting Data**: Pivot the DataFrame.
 
 ```python
-
+df = df.groupBy("department").pivot("year").sum("salary")
 ```
  
 - **Joining DataFrames**: Join multiple DataFrames.
 
 ```python
-
+df1 = df1.join(df2, df1["id"] == df2["id"], "inner")
 ```
 
 ### 5. Working with Characters
@@ -938,13 +939,17 @@ df = df.na.fill({"age": 0, "name": "unknown"})
 - **String Manipulations**: Perform operations like trimming, upper/lower case conversion, substring extraction.
 
 ```python
-
+from pyspark.sql.functions import lower, upper, trim, substring
+df = df.withColumn("lower_name", lower(col("name")))
+df = df.withColumn("upper_name", upper(col("name")))
+df = df.withColumn("trimmed_name", trim(col("name")))
+df = df.withColumn("sub_name", substring(col("name"), 1, 3))
 ```
  
 - **Replacing Values**: Replace specific values in a column.
 
 ```python
-
+df = df.withColumn("name", regexp_replace(col("name"), "old_value", "new_value"))
 ```
 
 ### 6. Working with Time Series
@@ -952,13 +957,21 @@ df = df.na.fill({"age": 0, "name": "unknown"})
 - **Date and Time Functions**: Extract or manipulate date and time information.
 
 ```python
-
+from pyspark.sql.functions import year, month, dayofmonth, hour, minute, second, to_date, to_timestamp
+df = df.withColumn("year", year(col("timestamp")))
+df = df.withColumn("month", month(col("timestamp")))
+df = df.withColumn("day", dayofmonth(col("timestamp")))
+df = df.withColumn("date", to_date(col("timestamp")))
+df = df.withColumn("datetime", to_timestamp(col("date_string"), "yyyy-MM-dd HH:mm:ss"))
 ```
 
 - **Window Functions**: Perform calculations over a sliding window.
 
 ```python
-
+from pyspark.sql.window import Window
+from pyspark.sql.functions import row_number
+window_spec = Window.partitionBy("department").orderBy("salary")
+df = df.withColumn("rank", row_number().over(window_spec))
 ```
 
 ### 7. Handling Other Formats (Audio, Video, Images)
@@ -966,7 +979,7 @@ df = df.na.fill({"age": 0, "name": "unknown"})
 - **Reading Binary Files**: Read binary files like images.
 
 ```python
-
+binary_df = spark.read.format("binaryFile").load("path/to/images/*")
 ```
 
 - Using External Libraries: Use external libraries for specific formats.
@@ -976,12 +989,15 @@ df = df.na.fill({"age": 0, "name": "unknown"})
 3. **Images**: Use libraries like PIL or pyspark.ml.image for image processing
 
 ```python
-
+from pyspark.ml.image import ImageSchema
+image_df = ImageSchema.readImages("path/to/images")
 ```
 
 By utilizing these operations, you can effectively wrangle data in Apache Spark, transforming it into a format that is suitable for analysis or machine learning. Each operation helps to clean, structure, and enhance the data, ensuring that it meets the necessary quality and usability standards.
 
 # VIII. Spark SQL 
+
+## 
 
 ## SQL Operations
 
