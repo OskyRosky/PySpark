@@ -52,7 +52,7 @@ Installation Guides: Detailed guides for installing Apache Spark on both Mac and
 
 ---------------------------------------------
 
-# :computer: Py Spark :computer:
+# :computer: PySpark :computer:
 
 ---------------------------------------------
 # I. Introduction to PySpark
