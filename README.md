@@ -1299,61 +1299,61 @@ Integrate with libraries like Matplotlib, Seaborn, and Plotly to visualize data.
 
 Staying updated with the latest developments in PySpark is crucial for anyone involved in Data field. Here is a list of some exclusive websites and resources dedicated to PySpark that can help you keep abreast of the latest trends, research, and tools.
 
-1. Apache Spark Official Documentation
+1. **Apache Spark Official Documentation**
 
 URL: [Apache Spark Documentation](https://spark.apache.org/documentation.html)
 
 Description: The official documentation provides comprehensive information about all aspects of Spark, including PySpark. It includes user guides, API references, and examples.
 
-2. Databricks Community Edition
+2. **Databricks Community Edition**
 
 URL: Databricks Community Edition
 
 Description: Databricks offers a free Community Edition where you can practice PySpark. It also provides tutorials, notebooks, and a platform to run your Spark jobs.
 
-3. Spark + AI Summit
+3. **Spark + AI Summit**
 
 URL: Spark + AI Summit
 
 Description: An annual conference hosted by Databricks featuring talks, workshops, and keynotes from industry experts on Spark, AI, and machine learning. Recordings of past sessions are available online.
 
-4. Stack Overflow
+4. **Stack Overflow**
 
 URL: Stack Overflow
 
 Description: A popular Q&A platform where you can ask questions and find answers related to PySpark. The PySpark tag has a wide range of questions and answers from the community.
 
-5. GitHub Repositories
+5. **GitHub Repositories**
 
 URL: GitHub - Apache Spark
 
 Description: The official GitHub repository for Apache Spark. You can explore the source code, contribute to the project, and find example projects and issues.
 
-6. PySpark Tutorials on Medium
+6. **PySpark Tutorials on Medium**
 
 URL: Medium - PySpark
 
 Description: Medium hosts numerous articles and tutorials on PySpark written by data scientists and engineers. It’s a great resource for learning new techniques and best practices.
 
-7. Kaggle Datasets and Notebooks
+7. **Kaggle Datasets and Notebooks**
 
 URL: Kaggle - PySpark
 
 Description: Kaggle offers datasets and notebooks where you can find and share PySpark projects. It’s a great platform for practical learning and experimentation.
 
-8. YouTube Channels
+8. **YouTube Channels**
 
 URL: YouTube - PySpark
 
 Description: There are several YouTube channels dedicated to PySpark tutorials and webinars. These videos can help you learn PySpark through visual and practical demonstrations.
 
-9. Coursera - Big Data Analysis with Scala and Spark
+9. **Coursera - Big Data Analysis with Scala and Spark**
 
 URL: Coursera - Spark Course
 
 Description: A course offered by Coursera that covers big data analysis using Spark. It includes hands-on projects and assignments to enhance your PySpark skills.
 
-10. PySpark User Mailing List
+10. **PySpark User Mailing List**
 
 URL: PySpark User Mailing List
 
