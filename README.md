@@ -50,7 +50,7 @@ Installation Guides: Detailed guides for installing Apache Spark on both Mac and
 
 **PySpark Tutorials**: Enhance your learning with a collection of YouTube videos that provide practical demonstrations and in-depth tutorials on PySpark. Explore various topics and techniques through these carefully selected video resources.
 
-
+![py](/ima/ima3.png)
 
 ---------------------------------------------
 
@@ -60,6 +60,8 @@ Installation Guides: Detailed guides for installing Apache Spark on both Mac and
 # I. Introduction to PySpark
 
 Apache Spark is a powerful open-source processing engine built around speed, ease of use, and sophisticated analytics. Spark has become a key player in the world of Big Data due to its ability to handle large-scale data processing through distributed computing. Originating from the AMPLab at UC Berkeley, Spark was designed to perform tasks quickly by utilizing in-memory processing and optimizing data distribution across multiple machines. The architecture of Spark revolves around the concept of clusters, where a master node oversees the allocation of tasks to worker nodes. These worker nodes execute tasks in parallel using the MapReduce paradigm, enabling efficient data processing and storage. The flexibility of Spark allows it to be used with multiple programming languages, including Python, through the PySpark framework, making it accessible and versatile for various big data applications.
+
+
 
 ## Data through Ram memory 
 
