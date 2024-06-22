@@ -866,7 +866,7 @@ By leveraging these data sources and formats, Apache Spark allows you to create 
 
 Data wrangling, also known as data munging, is the process of transforming and mapping data from its raw form into a more usable format. This often involves several steps, including cleaning, structuring, enriching, and validating the data. The goal of data wrangling is to make raw data more accessible and useful for analysis.
 
-![py](/ima/ima17.jpeg)
+![py](/ima/ima17.jpg)
 
 ### Steps Involved in Data Wrangling
 
