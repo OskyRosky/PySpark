@@ -886,6 +886,8 @@ The primary purpose of data wrangling is to prepare data for analysis or machine
 3. **Facilitating Data Integration**: Data wrangling allows for the merging of data from different sources, providing a comprehensive view of the information.
 4. **Enabling Advanced Analytics**: Preparing data properly is a prerequisite for applying advanced analytics techniques such as machine learning, as these methods require clean and well-structured data.
 
+![py](/ima/ima18.jpeg)
+
 ## Operarions
 
 Data wrangling can be performed at multiple levels, including ingestion, column operations, row operations, general transformations of the DataFrame structure, specific character manipulations, time series structuring, and handling other formats such as images, audio, and video.
