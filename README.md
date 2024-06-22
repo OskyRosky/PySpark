@@ -50,6 +50,8 @@ Installation Guides: Detailed guides for installing Apache Spark on both Mac and
 
 **PySpark Tutorials**: Enhance your learning with a collection of YouTube videos that provide practical demonstrations and in-depth tutorials on PySpark. Explore various topics and techniques through these carefully selected video resources.
 
+
+
 ---------------------------------------------
 
 # :computer: PySpark :computer:
@@ -91,6 +93,8 @@ MapReduce is a programming model for processing and generating large data sets. 
 ## Python + Spark = PySpark
 
 PySpark is the Python API for Apache Spark, allowing Python developers to leverage the power of Spark for big data processing. It provides an easy-to-use interface for performing a wide range of data processing tasks, from simple data manipulations to complex machine learning algorithms. PySpark combines the simplicity and versatility of Python with the speed and scalability of Spark, making it a popular choice for data scientists and engineers. This synergy enables users to efficiently process and analyze big data using familiar Python constructs.
+
+![py](/ima/ima3.png)
 
 ## So...
 
