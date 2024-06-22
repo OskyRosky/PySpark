@@ -1282,7 +1282,7 @@ Spark SQL is a powerful component of Apache Spark that integrates SQL queries wi
 
 Besides performing data engineering tasks with PySpark, there are numerous other capabilities and applications that PySpark can facilitate. Here are some key areas where PySpark can be effectively utilized:
 
-![py](/ima/ima23.png)
+![py](/ima/ima23.jpg)
 
 ## 1. Data Analysis
 
