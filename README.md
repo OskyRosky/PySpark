@@ -61,7 +61,7 @@ Installation Guides: Detailed guides for installing Apache Spark on both Mac and
 
 Apache Spark is a powerful open-source processing engine built around speed, ease of use, and sophisticated analytics. Spark has become a key player in the world of Big Data due to its ability to handle large-scale data processing through distributed computing. Originating from the AMPLab at UC Berkeley, Spark was designed to perform tasks quickly by utilizing in-memory processing and optimizing data distribution across multiple machines. The architecture of Spark revolves around the concept of clusters, where a master node oversees the allocation of tasks to worker nodes. These worker nodes execute tasks in parallel using the MapReduce paradigm, enabling efficient data processing and storage. The flexibility of Spark allows it to be used with multiple programming languages, including Python, through the PySpark framework, making it accessible and versatile for various big data applications.
 
-
+![py](/ima/ima4.jpeg)
 
 ## Data through Ram memory 
 
