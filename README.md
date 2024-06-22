@@ -669,7 +669,9 @@ DataFrames in Spark provide a powerful, flexible, and efficient way to handle la
 3. **Data Lakes**: Large repositories that store vast amounts of raw data in its native format, such as Amazon S3, Azure Data Lake Storage, and Hadoop Distributed File System (HDFS).
 4. **Web Data**: Data scraped or fetched from web APIs, web pages, and online data sources.
 5. **Databases**: Traditional relational databases (RDBMS) like MySQL, PostgreSQL, SQL Server, and NoSQL databases like MongoDB and Cassandra.
-6. **Streaming Data Sources: Real-time data streams from platforms like Apache Kafka, Amazon Kinesis, and Apache Flume.
+6. **Streaming Data Sources**: Real-time data streams from platforms like Apache Kafka, Amazon Kinesis, and Apache Flume.
+
+![py](/ima/ima14.png)
 
 ## Data Format
 
@@ -683,6 +685,8 @@ Here is a list of eight data formats that Apache Spark can read and write:
 6. **Text**: Simple text files, where each line is a single record.
 7. **XML** (Extensible Markup Language): A markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable.
 8. **Delta Lake**: An open-source storage layer that brings ACID transactions to Apache Spark and big data workloads.
+
+![py](/ima/ima15.jpeg)
 
 ## Creating DataFrames from Various Data Sources
 
