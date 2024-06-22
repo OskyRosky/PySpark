@@ -107,6 +107,8 @@ In summary, Apache Spark is a robust and versatile framework designed for effici
 
 ## Detailed Guide for Installing Apache Spark on Mac
 
+![py](/ima/ima5.png)
+
 **Step 1: Install Homebrew**
 
 Homebrew is a package manager for macOS that simplifies the installation of software. If you don't already have Homebrew installed, follow these steps:
@@ -236,6 +238,8 @@ source ~/.zshrc   # or source ~/.bash_profile
 This guide should help you get Apache Spark up and running on your Mac machine.
 
 ## Detailed Guide for Installing Apache Spark on Windows
+
+![py](/ima/ima6.webp)
 
 **Step 1: Install Java Development Kit (JDK)**
 
