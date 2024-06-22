@@ -368,9 +368,14 @@ Apache Spark provides two essential components for interacting with the cluster 
 
 SparkContext is the entry point for accessing Spark functionalities. It represents the connection to a Spark cluster and is responsible for managing the distributed environment. SparkContext allows users to create RDDs, broadcast variables, and perform accumulations. It essentially handles the low-level details of the cluster and serves as the core component for distributed computing.
 
+![py](/ima/ima7.png)
+
 ## What's SparkSession
 
 SparkSession is a unified entry point for all the functionalities provided by Spark. Introduced in Spark 2.0, SparkSession consolidates the functionalities of SparkContext, SQLContext, and HiveContext into a single API. It simplifies the user experience by providing a central point for creating DataFrames, executing SQL queries, and accessing catalog functionalities. SparkSession manages the Spark application's lifecycle and configuration.
+
+![py](/ima/ima8.webp)
+
 
 ## Similarities
 
@@ -383,6 +388,9 @@ Both SparkContext and SparkSession provide the means to interact with a Spark cl
 - Functionality: SparkSession combines the functionalities of SparkContext, SQLContext, and HiveContext, providing a unified API for all Spark operations. SparkContext, on the other hand, focuses primarily on low-level cluster management and RDD creation.
   
 - Ease of Use: SparkSession simplifies the user experience by providing a single entry point for all Spark functionalities, making it easier to manage and execute Spark jobs.
+
+![py](/ima/ima9.webp)
+
 
 ## Create an SparkContex
 
