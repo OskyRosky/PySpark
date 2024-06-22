@@ -1068,6 +1068,8 @@ By utilizing these operations, you can effectively wrangle data in Apache Spark,
 
 Spark SQL is a module in Apache Spark that integrates relational processing with Spark's functional programming API. It allows you to query structured data inside Spark programs using SQL as well as the DataFrame API. This integration enables powerful and expressive data processing capabilities, leveraging the strengths of both relational and functional paradigms.
 
+![py](/ima/ima20.png)
+
 ## What's Spark SQL ?
 
 Spark SQL is a Spark module for structured data processing. It provides a programming abstraction called DataFrames and can also act as a distributed SQL query engine. It allows for seamless integration between SQL queries and complex analytics, providing a unified interface for querying and manipulating structured data.
@@ -1078,6 +1080,8 @@ Spark SQL provides several advantages, including:
 - Interoperability between SQL and Spark’s core APIs, allowing for complex data manipulation and analytics.
 - Optimization through the Catalyst optimizer and Tungsten execution engine for improved performance.
 
+![py](/ima/ima22.jpeg)
+
 ## Key Features of Spark SQL.
 
 1. **Unified Data Access**: Spark SQL provides a common way to access a variety of data sources such as Hive, Avro, Parquet, ORC, JSON, and JDBC.
@@ -1086,6 +1090,8 @@ Spark SQL provides several advantages, including:
 4. **Catalyst Optimizer**: A highly extensible query optimizer that ensures efficient query execution.
 5. **Seamless Integration**: Integration with Spark’s core APIs allows users to intermix SQL queries with complex analytics.
 6. **DataFrames and Datasets**: Provides high-level abstractions for manipulating structured data.
+
+![py](/ima/ima21.png)
 
 
 ## Perform SQL like queries on Spark DataFrames
