@@ -556,6 +556,8 @@ In summary, RDDs are a fundamental component of Apache Spark, providing a robust
 
 DataFrames in Apache Spark provide a higher-level abstraction than RDDs, offering a powerful and flexible way to perform data processing tasks. They are similar to data frames in R or Python's pandas library but optimized for distributed computing.
 
+![py](/ima/ima13.jpg)
+
 ## What's a Dataframe?
 
 A DataFrame is a distributed collection of data organized into named columns. It is conceptually equivalent to a table in a relational database or a data frame in R or Python. DataFrames provide a more expressive and flexible API than RDDs, making it easier to manipulate structured data.
@@ -594,6 +596,8 @@ DataFrames provide several advantages over RDDs, including:
 - Optimized Execution: DataFrames use the Catalyst optimizer, a query optimizer that can perform advanced optimizations and generate efficient execution plans.
 - Ease of Use: The API for DataFrames is more expressive and user-friendly, supporting a wide range of operations similar to SQL.
 - Integration with SQL: DataFrames can be queried using SQL syntax, making it easier for users familiar with SQL to perform data analysis.
+
+![py](/ima/ima12.jpeg)
 
 Example 1: Using schema information for optimization
 
