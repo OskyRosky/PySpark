@@ -434,6 +434,8 @@ Understanding SparkContext and SparkSession is crucial for effectively utilizing
 
 Resilient Distributed Datasets (RDDs) are the fundamental data structure of Apache Spark. They are immutable, distributed collections of objects that can be processed in parallel across a cluster. RDDs provide fault tolerance and lineage information, which helps in recovering lost data. This section covers the basics of RDDs, their characteristics, transformations, actions, and operations.
 
+![py](/ima/ima10.png)
+
 ## What's RDDs (Resilient Distributed Datasets)
 
 RDDs are a core abstraction in Apache Spark, representing a read-only collection of objects distributed across a cluster of machines. RDDs can be created from Hadoop Distributed File System (HDFS) datasets or by transforming existing RDDs. They support two types of operations: transformations and actions.
@@ -449,6 +451,8 @@ RDDs are a core abstraction in Apache Spark, representing a read-only collection
 4. **Lazy Evaluation**: Transformations on RDDs are not executed immediately. They are evaluated lazily, meaning computation is deferred until an action is performed.
    
 5. **In-Memory Computing**: RDDs can cache data in memory, which improves the performance of iterative algorithms.
+
+![py](/ima/ima11.png)
 
 ## RDD Transformations and Actions
 
